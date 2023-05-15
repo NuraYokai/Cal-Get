@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import styled from "styled-components/native";
-import { SafeAreaView, StyleSheet, View } from "react-native";
-import PropTypes from "prop-types";
+import { StyleSheet, View } from "react-native";
 
-import { Text } from "../../../components/typography/text.component";
-import { FabGroup } from "../../Components/FabGroup/fab-group.component";
+import { Text } from "../../components/atoms/typography/text.component";
+import { FabGroup } from "../../components/molecules/FabGroup/fab-group.component";
 
-const Container = styled(SafeAreaView)`
-  flex: 1;
-  background-color: transparent;
-`;
-
-export default function Transactions() {
+const TransactionScreen = () => {
   const [fabOpen, setFabOpen] = useState(true);
 
   const handleFabStateChange = ({ open }) => {
@@ -27,7 +20,7 @@ export default function Transactions() {
   };
 
   return (
-    <Container>
+    <>
       <View style={styles.container}>
         <Text variant="title">Transactions</Text>
       </View>
@@ -44,14 +37,8 @@ export default function Transactions() {
         ]}
         onStateChange={handleFabStateChange}
       />
-    </Container>
+    </>
   );
-}
-
-Transactions.propTypes = {
-  open: PropTypes.bool,
-  actions: PropTypes.array,
-  onStateChange: PropTypes.func,
 };
 
 const styles = StyleSheet.create({
@@ -61,3 +48,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+
+export default TransactionScreen;

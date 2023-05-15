@@ -3,13 +3,7 @@ import { StyleSheet } from "react-native";
 import { FAB } from "react-native-paper";
 
 export const Fab = ({ icon, onPress }) => {
-  return (
-    <FAB
-      style={styles1.fab}
-      icon={icon}
-      onPress={onPress}
-    />
-  );
+  return <FAB style={styles1.fab} icon={icon} onPress={onPress} />;
 };
 
 export const FabGroup = ({ open, onStateChange, actions }) => {
